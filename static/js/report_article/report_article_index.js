@@ -33,7 +33,7 @@ post_list = () => {
 
                     temp_html = ` <tr>
                     <td >${id}</td>
-                    <td><div style = "cursor : pointer;" onclick="report_article(${id})"> ${title}] </div></td>
+                    <td><div style = "cursor : pointer;" onclick="report_article(${id})"> ${title} </div></td>
                     <td>${user}</td>
                     <td>${today.toLocaleDateString()}</td>
                 </tr>`
@@ -144,7 +144,7 @@ function page(page) {
 
                     temp_html = ` <tr>
                     <td>${id}</td>
-                    <td><div style = "cursor : pointer;" onclick="report_article(${id})"> ${title}] </div></td>
+                    <td><div style = "cursor : pointer;" onclick="report_article(${id})"> ${title} </div></td>
                     <td>${user}</td>
                     <td>${today.toLocaleDateString()}</td>
                 </tr>`

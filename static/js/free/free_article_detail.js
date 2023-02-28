@@ -1,5 +1,7 @@
 $(document).ready(function() {
     const FLAG = localStorage.getItem("access", ' ')
+    alert(document.cookie)
+    document.cookie = "user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT"
     if(!FLAG){
         window.location.href = "/user/login.html"
         return
@@ -60,7 +62,7 @@ function free_article_detail(){
 
 
         }
-    })
+    });
 }
 
 $(document).ready(function () {
@@ -83,6 +85,13 @@ $(document).ready(function () {
                         var time = response['results'][i]["created_at"]
                         let next=response['next']
                         let previous=response['previous']
+
+                        if(next!=null){
+                          next = hostUrl + next.split(":8000")[1]
+                        }
+                        if(previous!=null){
+                          previous = hostUrl + previous.split(":8000")[1]
+                        }
 
                         temp_html=
                         `
@@ -138,7 +147,14 @@ function page(page) {
             var time = response['results'][i]["created_at"]
             let next=response['next']
             let previous=response['previous']
-  
+            
+            if(next!=null){
+              next = hostUrl + next.split(":8000")[1]
+            }
+            if(previous!=null){
+              previous = hostUrl + previous.split(":8000")[1]
+            }
+
             temp_html=
             `
             <li class="list-group-item d-flex justify-content-between align-items-start" style="margin-top:10px; background-color: #85f2ad;">

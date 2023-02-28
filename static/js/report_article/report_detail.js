@@ -75,6 +75,12 @@ function comment() {
         let next = response['next']
         let previous = response['previous']
 
+        if (next != null) {
+          next = hostUrl + next.split(":8000")[1]
+        }
+        if (previous != null) {
+          previous = hostUrl + previous.split(":8000")[1]
+        }
         // console.log("코멘트의 유저id",comment_user_id)
         // console.log("코멘트 개수",comments_count)
         // console.log("로그인 사용자의 유저 id22",login_user_id)
@@ -135,6 +141,12 @@ function page(page) {
         let next = response['next']
         let previous = response['previous']
 
+        if (next != null) {
+          next = hostUrl + next.split(":8000")[1]
+        }
+        if (previous != null) {
+          previous = hostUrl + previous.split(":8000")[1]
+        }
         // console.log("코멘트의 유저id",comment_user_id)
         // console.log("코멘트 개수",comments_count)
         // console.log("로그인 사용자의 유저 id22",login_user_id)

@@ -112,20 +112,20 @@ function logoutTemp(payload) {
 }
 
 // 로그인 시 로그아웃 보이기
-if(payload){
-    var logout_temp=`<div><span style="cursor:pointer" onclick="handleLogout()">로그아웃</span></div>`
+if (payload) {
+    var logout_temp = `<div><span style="cursor:pointer" onclick="handleLogout()">로그아웃</span></div>`
 } else {
     var logout_temp = `<div></div>`
 }
 
 //로그인 시 프로필 눌리기
-if(payload){
-    var drop_menu =`
+if (payload) {
+    var drop_menu = `
     <li onclick='moveProfile()'><a style="color:black; font-size:15px;" href="#">프로필</a></li>
     <li onclick="handleLogout()"><a style="color:black;font-size:15px; " href="#">로그아웃</a></li>
     `
 } else {
-    var drop_menu =`
+    var drop_menu = `
     <div></div>
     `
 }
@@ -210,7 +210,7 @@ if (token !== null && payload !== null) {
             }
 
         }
-        if(responseType === 'alram'){
+        if (responseType === 'alram') {
 
             let message = data['message']
             let goodsId = data['goods_id']
